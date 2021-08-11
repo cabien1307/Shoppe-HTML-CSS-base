@@ -4,6 +4,7 @@
 <head>
     <title>Tiki - Lazada</title>
     <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <!-- CDN -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -18,8 +19,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <!-- Asset -->
+    <link rel="stylesheet" href="./asset/css/grid.css">
+    
     <link rel="stylesheet" href="./asset/css/base.css">
     <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/css/responsive.css">
+    
     <link href="./asset/fonts/fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet">
     <!--load all styles -->
 
@@ -29,9 +34,9 @@
 <body>
     <div id="app">
         <header class="header">
-            <div class="grid">
+            <div class="grid wide">
                 <!-- Navbar -->
-                <nav class="header__navbar">
+                <nav class="header__navbar hide-on-moblie-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--separate">Kênh người bán</li>
                         <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
@@ -140,7 +145,12 @@
 
                 <!-- Search -->
                 <div class="header-with-search">
-                    <div class="header__logo">
+
+                    <label class="header__mobile-search" for="mobile-search-checkbox">
+                        <i class="header__mobile-search-icon fas fa-search"></i>
+                    </label>
+
+                    <div class="header__logo hide-on-tablet">
                         <svg class="header__logo-img" viewBox="0 0 87 48" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M69.052 12.375l-3.097 16.548a44.418 44.418 0 00-.74 6.633h-4.378l.27-2.94h-.068a6.042 6.042 0 01-5.251 3.008c-2.761 0-4.983-2.188-4.983-6.154 0-5.675 4.04-10.872 10.1-10.872.74 0 1.481.137 2.222.41l1.212-6.564 4.713-.069zm-6.666 10.394a2.664 2.664 0 00-1.885-.547c-2.828 0-4.848 3.35-4.848 6.496 0 1.983.875 3.077 2.222 3.077 1.414 0 3.03-1.436 3.636-4.581l.875-4.445zM4.481 30.017a10.123 10.123 0 005.252 1.436c1.818 0 3.501-.889 3.501-2.667 0-1.299-.942-2.12-2.962-3.145-2.424-1.3-4.646-3.009-4.646-5.95 0-4.512 3.905-7.316 8.753-7.316 2.693 0 4.31.616 5.252 1.163l-1.481 4.034a8.713 8.713 0 00-4.108-1.025c-2.222 0-3.366 1.162-3.366 2.393 0 1.299 1.346 2.12 3.232 3.145 2.693 1.436 4.444 3.283 4.444 5.95 0 4.991-4.108 7.59-9.023 7.59-3.097 0-5.32-.821-6.33-1.573l1.482-4.035zm27.606 4.308a13.756 13.756 0 01-5.992 1.3c-4.579 0-6.935-2.668-6.935-6.839 0-4.991 3.568-10.12 9.359-10.12 3.232 0 5.588 1.847 5.588 4.855 0 4.171-3.972 5.676-10.436 5.54 0 .615.202 1.162.471 1.64.606.82 1.684 1.3 3.098 1.3 1.548 0 3.097-.342 4.51-1.026l.338 3.35zm-4.174-12.24c-2.222 0-3.434 1.846-3.771 3.35 3.703.07 5.521-.478 5.521-1.982 0-.82-.606-1.368-1.75-1.368zm5.52 13.471l2.088-11.35c.404-2.052.74-4.24.875-5.676h4.242l-.404 3.077h.068a6.707 6.707 0 015.656-3.077c2.625 0 4.107 1.64 4.107 4.444 0 .958-.135 1.847-.27 2.804l-1.818 9.778h-4.713l1.75-9.368c.135-.615.135-1.23.135-1.846 0-1.163-.404-1.915-1.548-1.915-1.549 0-3.367 1.983-3.973 5.54l-1.414 7.59h-4.78zM84 25.3c0 5.95-3.973 10.325-9.561 10.325-4.107 0-6.8-2.735-6.8-6.77 0-5.675 3.904-10.325 9.56-10.325 4.31.069 6.8 3.078 6.8 6.77m-11.445 3.487c0 1.915.942 3.146 2.558 3.146 2.626 0 4.04-3.83 4.04-6.633 0-1.504-.606-3.077-2.558-3.077-2.694 0-4.107 4.034-4.04 6.565"
@@ -148,7 +158,9 @@
                         </svg>
                     </div>
 
-                    <div class="header__search">
+                    <input type="checkbox" hidden class="header__checkbox"  id="mobile-search-checkbox">
+
+                    <div class=" header__search">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Search here...">
 
@@ -297,179 +309,7 @@
                                         </div>
                                     </li>
 
-                                    <li class="header__cart-item">
-                                        <img src="https://vn-test-11.slatic.net/p/85d2f41ae3741a3008345a7102ac4204.png_170x170Q100.jpg_.webp"
-                                            alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">
-                                                    Tivi Samsung
-                                                </h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">
-                                                        10.000.000 VND
-                                                    </span>
-                                                    <span class="header__cart-item-multi">x</span>
-                                                    <span class="header__cart-item-qnt">
-                                                        1
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-desc">
-                                                    Type: Technology
-                                                </span>
-                                                <span class="header__cart-item-remove">
-                                                    Delete
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </li>
 
-                                    <li class="header__cart-item">
-                                        <img src="https://vn-test-11.slatic.net/p/85d2f41ae3741a3008345a7102ac4204.png_170x170Q100.jpg_.webp"
-                                            alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">
-                                                    Tivi Samsung
-                                                </h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">
-                                                        10.000.000 VND
-                                                    </span>
-                                                    <span class="header__cart-item-multi">x</span>
-                                                    <span class="header__cart-item-qnt">
-                                                        1
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-desc">
-                                                    Type: Technology
-                                                </span>
-                                                <span class="header__cart-item-remove">
-                                                    Delete
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="header__cart-item">
-                                        <img src="https://vn-test-11.slatic.net/p/85d2f41ae3741a3008345a7102ac4204.png_170x170Q100.jpg_.webp"
-                                            alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">
-                                                    Tivi Samsung
-                                                </h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">
-                                                        10.000.000 VND
-                                                    </span>
-                                                    <span class="header__cart-item-multi">x</span>
-                                                    <span class="header__cart-item-qnt">
-                                                        1
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-desc">
-                                                    Type: Technology
-                                                </span>
-                                                <span class="header__cart-item-remove">
-                                                    Delete
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="header__cart-item">
-                                        <img src="https://vn-test-11.slatic.net/p/85d2f41ae3741a3008345a7102ac4204.png_170x170Q100.jpg_.webp"
-                                            alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">
-                                                    Tivi Samsung
-                                                </h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">
-                                                        10.000.000 VND
-                                                    </span>
-                                                    <span class="header__cart-item-multi">x</span>
-                                                    <span class="header__cart-item-qnt">
-                                                        1
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-desc">
-                                                    Type: Technology
-                                                </span>
-                                                <span class="header__cart-item-remove">
-                                                    Delete
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="header__cart-item">
-                                        <img src="https://vn-test-11.slatic.net/p/85d2f41ae3741a3008345a7102ac4204.png_170x170Q100.jpg_.webp"
-                                            alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">
-                                                    Tivi Samsung
-                                                </h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">
-                                                        10.000.000 VND
-                                                    </span>
-                                                    <span class="header__cart-item-multi">x</span>
-                                                    <span class="header__cart-item-qnt">
-                                                        1
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-desc">
-                                                    Type: Technology
-                                                </span>
-                                                <span class="header__cart-item-remove">
-                                                    Delete
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="header__cart-item">
-                                        <img src="https://vn-test-11.slatic.net/p/85d2f41ae3741a3008345a7102ac4204.png_170x170Q100.jpg_.webp"
-                                            alt="" class="header__cart-img">
-                                        <div class="header__cart-item-info">
-                                            <div class="header__cart-item-head">
-                                                <h5 class="header__cart-item-name">
-                                                    Tivi Samsung
-                                                </h5>
-                                                <div class="header__cart-item-price-wrap">
-                                                    <span class="header__cart-item-price">
-                                                        10.000.000 VND
-                                                    </span>
-                                                    <span class="header__cart-item-multi">x</span>
-                                                    <span class="header__cart-item-qnt">
-                                                        1
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="header__cart-item-body">
-                                                <span class="header__cart-item-desc">
-                                                    Type: Technology
-                                                </span>
-                                                <span class="header__cart-item-remove">
-                                                    Delete
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </li>
                                 </ul>
                                 <button class="btn btn--primary header__cart-view">See your cart !</button>
                             </div>
@@ -479,12 +319,27 @@
 
             </div>
 
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Recommend</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Popular</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Best seller</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Price</a>
+                </li>
+            </ul>
+
         </header>
 
         <div class="app_container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row app__content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <h3 class="category__heading">
                                 <i class="category__heading-icon fas fa-list"></i>
@@ -504,8 +359,8 @@
                         </nav>
                     </div>
 
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-moblie-tablet">
                             <span class="home-filter__label">Sort by</span>
                             <button class="home-filter__btn btn">Popular</button>
                             <button class="home-filter__btn btn btn--primary">New</button>
@@ -546,9 +401,50 @@
                             </div>
                         </div>
 
+
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ thiết bị tiện ích </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Dụng cụ thiết bị tiện ích</a>
+                                </li>
+                                
+                            </ul>
+                        </nav>
+                        
+
                         <div class="home-product">
-                            <div class="grid__row">
-                                <div class="grid__column-2-4">
+                            <div class="row">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://vn-test-11.slatic.net/p/5a8f47b584b5546d62fed130aae43f83.jpg_400x400Q100.jpg_.webp);">
@@ -592,7 +488,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://vn-test-11.slatic.net/p/5a8f47b584b5546d62fed130aae43f83.jpg_400x400Q100.jpg_.webp);">
@@ -636,7 +532,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://vn-test-11.slatic.net/p/5a8f47b584b5546d62fed130aae43f83.jpg_400x400Q100.jpg_.webp);">
@@ -680,7 +576,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://vn-test-11.slatic.net/p/5a8f47b584b5546d62fed130aae43f83.jpg_400x400Q100.jpg_.webp);">
@@ -724,7 +620,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://vn-test-11.slatic.net/p/5a8f47b584b5546d62fed130aae43f83.jpg_400x400Q100.jpg_.webp);">
@@ -768,7 +664,7 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item__img"
                                             style="background-image: url(https://vn-test-11.slatic.net/p/5a8f47b584b5546d62fed130aae43f83.jpg_400x400Q100.jpg_.webp);">
@@ -878,9 +774,9 @@
         </div>
 
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+            <div class="grid wide footer__content">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Customer care</h3>
                         <ul class="footer-list">
                             <li class="footer-list__item">
@@ -900,7 +796,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">About</h3>
                         <ul class="footer-list">
                             <li class="footer-list__item">
@@ -924,7 +820,7 @@
                         </ul>
                     </div>
 
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Introduction</h3>
                         <ul class="footer-list">
                             <li class="footer-list__item">
@@ -945,7 +841,7 @@
                         </ul>
                     </div>
 
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Contact us</h3>
                         <ul class="footer-list">
                             <li class="footer-list__item">
@@ -969,7 +865,7 @@
                         </ul>
                     </div>
 
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-8 c-6">
                         <h3 class="footer__heading">Store</h3>
                         <div class="footer__download">
                             <img src="/asset/img/qr-code.png" alt="" class="footer__download-qr">
@@ -991,7 +887,7 @@
 
             </div>
             <div class="footer__bottom">
-                <div class="grid">
+                <div class="grid wide">
                     <p class="footer__copyright">Made with & in Bentonville, Boston, Joplin, Seattle, and Vergennes.
                     </p>
                 </div>
